@@ -1,0 +1,343 @@
+@font-face {
+    /* 为载入的字体取名字(随意) */
+    font-family: 'YSHST';
+    /* 字体文件地址(相对或者绝对路径都可以) */
+    src: url('/font/HYTangMeiRen55W.woff2');
+    /* 定义加粗样式(加粗多少) */
+    font-weight: normal;
+    /* 定义字体样式(斜体/非斜体) */
+    font-style: normal;
+    /* 定义显示样式 */
+    font-display: block;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+#nprogress .bar {
+    background-color: var(--main-color) !important;
+    padding-top: 2px;
+}
+
+#nprogress .peg {
+    box-shadow: 0 0 10px var(--default-color) 0 0 5px var(--default-color) !important;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    height: 1rem;
+    width: .5rem;
+    background-color: var(--select-text-color);
+    opacity: .6;
+    border-radius: 2px;
+    -webkit-appearance: none;
+}
+
+:root {
+    transition: all 1s ease;
+    --color-selection-bar: linear-gradient(to right, oklch(.8 .1 0), oklch(.8 .1 30), oklch(.8 .1 60), oklch(.8 .1 90), oklch(.8 .1 120), oklch(.8 .1 150), oklch(.8 .1 180), oklch(.8 .1 210), oklch(.8 .1 240), oklch(.8 .1 270), oklch(.8 .1 300), oklch(.8 .1 330), oklch(.8 .1 360));
+    --main-color: oklch(0.45 0.25 var(--hue));
+    --default-color: #333333;
+    --comment-color: #e1e1e1;
+    --bc-color: oklch(0.95 0.02 var(--hue));
+    --text-color: oklch(0.45 0.25 var(--hue));
+    --calendar-color: #333333;
+    --bc-line-color: rgba(232, 232, 232, 0.7);
+    --select-text-color: #f5f5f5;
+    --select-bg-color: oklch(0.8 0.12 var(--hue));
+    --default-bc: #FFFFFF;
+
+    --el-menu-bg-color: var(--bc-color);
+}
+
+:root[data-theme="dark"] {
+    transition: all .5s ease;
+    --color-selection-bar: linear-gradient(to right, oklch(.8 .1 0), oklch(.8 .1 30), oklch(.8 .1 60), oklch(.8 .1 90), oklch(.8 .1 120), oklch(.8 .1 150), oklch(.8 .1 180), oklch(.8 .1 210), oklch(.8 .1 240), oklch(.8 .1 270), oklch(.8 .1 300), oklch(.8 .1 330), oklch(.8 .1 360));
+    --main-color: oklch(0.6 0.14 var(--hue));
+    --default-color: #cfcfcf;
+    --comment-color: rgb(23, 44, 85);
+    --bc-color: oklch(0.2 0.03 var(--hue));
+    --text-color: oklch(0.6 0.14 var(--hue));
+    --calendar-color: #cfcfcf;
+    --bc-line-color: rgba(0, 0, 0, 0.1);
+    --select-text-color: #000000;
+    --select-bg-color: oklch(0.3 0.02 var(--hue));
+    --default-bc: rgba(8, 12, 25);
+
+    --el-menu-bg-color: var(--bc-color);
+
+}
+
+body {
+    background: var(--bc-color);
+    font-family: 'YSHST', fangsong;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+
+.md-editor {
+    background-color: transparent;
+}
+
+.md-editor-preview {
+    font-family: 'YSHST', fangsong;
+
+    p {
+        font-size: 1.2rem;
+        color: var(--main-color);
+    }
+
+    blockquote {
+        p {
+            color: var(--default-color);
+        }
+
+        background-color: var(--bc-color);
+        border-color: var(--main-color);
+    }
+
+    h1, h2 {
+        color: var(--default-color);
+    }
+
+    a {
+        color: var(--default-color);
+
+        &:hover {
+            color: var(--main-color);
+        }
+    }
+
+    figure {
+        img {
+            border-radius: 10px;
+        }
+    }
+}
+
+.md-editor-catalog {
+    color: var(--default-color);
+    font-weight: bold;
+    font-size: 1.3rem;
+
+    .md-editor-catalog-indicator {
+        background-color: var(--main-color);
+    }
+
+    .md-editor-catalog-container {
+        .md-editor-catalog-link {
+            color: var(--default-color);
+
+            &:hover {
+                span {
+                    color: var(--main-color) !important;
+                }
+            }
+        }
+    }
+
+
+    .md-editor-catalog-container .md-editor-catalog-active {
+        span {
+            color: var(--main-color);
+        }
+
+    }
+
+
+}
+
+.el-dialog {
+    background-color: var(--default-bc);
+}
+
+.el-form-item {
+    color: var(--main-color);
+
+    .is-disabled .el-input__wrapper {
+        background-color: var(--default-bc);
+        box-shadow: none;
+    }
+
+    .el-upload-dragger {
+        border: 1px solid var(--main-color);
+
+        &:hover {
+            box-shadow: 0 0 10px var(--main-color);
+        }
+    }
+
+    .upload-content {
+        background-color: var(--default-bc);
+
+
+        .el-upload__text {
+            margin-top: 5px;
+            color: var(--main-color);
+
+            em {
+                color: var(--default-color);
+            }
+        }
+    }
+
+    .el-textarea__inner {
+        background-color: var(--default-bc);
+        border: 1px solid var(--main-color);
+        box-shadow: none;
+    }
+
+    div {
+        color: var(--main-color);
+    }
+
+    label {
+        color: var(--main-color);
+    }
+
+    .el-input__wrapper {
+        background-color: var(--default-bc);
+        box-shadow: none;
+        border: 1px solid var(--main-color);
+
+        .el-input__inner {
+            font-family: 'YSHST', fangsong;
+            color: var(--main-color);
+        }
+    }
+}
+
+.el-switch {
+    --el-switch-on-color: var(--main-color);
+    --el-switch-off-color: var(--default-color);
+}
+
+
+.el-pagination {
+    --el-pagination-bg-color: var(--bc-color);
+    --el-pagination-button-bg-color: var(--bc-color);
+    --el-pagination-button-color: var(--main-color);
+    --el-pagination-hover-color: var(--main-color);
+    --el-pagination-button-disabled-bg-color: var(--bc-color);
+
+    .el-pagination__total {
+        color: var(--main-color);
+        font-weight: bold;
+    }
+
+    .el-pagination__sizes {
+        .el-select__wrapper {
+            background-color: transparent;
+
+            .el-select__selected-item {
+                color: var(--main-color);
+            }
+        }
+    }
+
+    .el-pager li {
+        background-color: transparent;
+        color: var(--default-color);
+        border-radius: 5px;
+        margin: 0 5px;
+
+        &:hover {
+            color: var(--main-color);
+        }
+    }
+
+    .el-pager li.is-active {
+        color: var(--select-text-color);
+        background-color: var(--main-color);
+    }
+
+    .el-pagination__goto {
+        color: var(--main-color);
+        font-weight: bold;
+    }
+
+    .el-input__inner {
+        font-family: 'YSHST', fangsong;
+        font-weight: bold;
+        color: var(--main-color);
+    }
+
+    .el-input__wrapper {
+        border: none;
+        background-color: transparent;
+    }
+}
+
+.el-table--fit {
+    border-radius: 20px;
+    color: var(--main-color);
+}
+.el-upload-dragger {
+    background-color: var(--default-bc);
+}
+.el-input {
+    --el-input-text-color: var(--main-color);
+    --el-input-border: var(--bc-color);
+    --el-input-hover-border: var(--main-color);
+    --el-input-focus-border: var(--main-color);
+    --el-input-border-color: var(--main-color);
+    --el-input-border-radius: var(--el-border-radius-base);
+    --el-input-bg-color: var(--bc-color);
+    --el-input-hover-border-color: var(--el-border-color-hover);
+}
+
+.el-select {
+    .el-select__wrapper {
+        background-color: var(--bc-color);
+    }
+
+}
+
+.el-table {
+    --el-table-row-hover-bg-color: var(--select-bg-color);
+    --el-table-bg-color: var(--select-bg-color);
+    --el-table-fixed-box-shadow: var(--select-bg-color);
+
+    tr, th {
+        background-color: var(--bc-color);
+    }
+
+    --el-table-header-text-color: var(--main-color);
+    --el-table-border: 1px solid var(--bc-color);
+    --el-table-border-color: var(--bc-color);
+    --el-table-tr-bg-color: var(--bc-color);
+    --el-table-header-bg-color: var(--bc-color);
+}
+
+@keyframes rowup {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes rowup {
+    0% {
+        transform: translate(0);
+    }
+    100% {
+        transform: translate(-50%);
+    }
+}
