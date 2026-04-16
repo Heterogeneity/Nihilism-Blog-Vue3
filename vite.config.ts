@@ -8,7 +8,6 @@ import Components from 'unplugin-vue-components/vite'
 import {ElementPlusResolver} from 'unplugin-vue-components/resolvers'
 import {ImportMetaEnv} from "./env";
 
-// https://vite.dev/config/
 let env: Record<keyof ImportMetaEnv, string> = loadEnv("", process.cwd());
 
 export default defineConfig({
