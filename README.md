@@ -4,7 +4,7 @@
 
 Vue3+Pinia+ElementPlus
 
-![Nihilism 1.0](public/Nihilism 1.0.png)
+![Nihilism 1.0](public/Nihilism%201.0.png)
 
 ## Recommended IDE Setup
 
