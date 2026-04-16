@@ -4,6 +4,8 @@
 
 Vue3+Pinia+ElementPlus
 
+![Nihilism 1.0](public/Nihilism 1.0.png)
+
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and
